@@ -3,14 +3,25 @@
  */
 angular.module('gms')
 
-    .config(function($routeProvider)
+    .config(function($stateProvider, $urlRouterProvider, USER_ROLES)
     {
-        $routeProvider
-            .when('/welcome',
-                {
-                    templateUrl : 'views/welcome.html'
-                })
-            .otherwise({
-                templateUrl : 'views/login.html'
+        $urlRouterProvider.otherwise('/index');
+        $stateProvider
+            .state('index',{
+                url: '/index',
+                templateUrl: 'views/login.html'
             })
+            .state('login',{
+                url: '/login',
+                templateUrl: 'views/login.html',
+                controller: 'loginCtrl'
+            })
+            .state('welcome',{
+                url: '/welcome',
+                templateUrl: 'views/welcome.html'
+            })
+            //.state('admin',{
+            //    url: '/admin',
+            //    templateUrl: 'admin.html'
+            //}, data: authorizedRoles [USER_ROLES.admin])
     })

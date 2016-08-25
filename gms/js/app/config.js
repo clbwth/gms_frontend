@@ -3,5 +3,6 @@
  */
 
 var config = {
-  api_url : 'http://192.168.178.194/gms/public/'
+  api_url : 'http://192.168.178.194/gms_api/public/api/',
+  web_url : 'http://192.168.178.194/gms_api/public/'
 };
