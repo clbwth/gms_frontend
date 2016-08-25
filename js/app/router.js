@@ -2,14 +2,13 @@
  * Created by Gabriele on 23/08/2016.
  */
 angular.module('gms')
-
-    .config(function($stateProvider, $urlRouterProvider, USER_ROLES)
+    .config(function($stateProvider, $urlRouterProvider)
     {
         $urlRouterProvider.otherwise('/index');
         $stateProvider
             .state('index',{
                 url: '/index',
-                templateUrl: 'views/login.html'
+                templateUrl: 'views/welcome.html'
             })
             .state('login',{
                 url: '/login',
@@ -20,8 +19,4 @@ angular.module('gms')
                 url: '/welcome',
                 templateUrl: 'views/welcome.html'
             })
-            //.state('admin',{
-            //    url: '/admin',
-            //    templateUrl: 'admin.html'
-            //}, data: authorizedRoles [USER_ROLES.admin])
     })

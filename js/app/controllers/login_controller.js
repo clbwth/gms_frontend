@@ -5,31 +5,36 @@ angular.module('gms')
     .controller('loginCtrl', function ($scope, LogsUserIn, $state) {
         $scope.username;
         $scope.password;
+        $scope.access_denied = false;
 
         $scope.login = function ()
         {
-           // console.log($state);
-
             LogsUserIn.login({
                     username: $scope.username,
                     password: $scope.password
                 })
                 .success(function (data) {
-                    window.sessionStorage.setItem('api_token', data);
+                    $scope.access_denied = false;
+                    window.localStorage.setItem('api_token', data);
                     $scope.onSuccessLogin();
                 })
                 .error(function (data) {
-                    //console.log(data);
+                    $scope.access_denied = true;
                 })
         };
+
         $scope.onSuccessLogin = function (){
             $state.go('welcome');
         };
 
         $scope.checkToken = function () {
-            if (!window.sessionStorage.getItem('api_token')) {
-                $stae.go('login');
+            if (!window.localStorage.getItem('api_token')) {
+                $state.go('login');
             }
         }
+
+        angular.element(document).ready(function () {
+            $scope.checkToken();
+        });
     })
     
