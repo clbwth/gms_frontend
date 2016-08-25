@@ -19,4 +19,9 @@ angular.module('gms')
                 url: '/welcome',
                 templateUrl: 'views/welcome.html'
             })
+            .state('new-bank',{
+                url: '/new-bank',
+                templateUrl: 'views/banks/new_bank.html',
+                controller: 'banksController'
+            })
     })
