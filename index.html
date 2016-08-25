@@ -9,8 +9,9 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 </head>
-<body ng-controller="loginCtrl">
-    <div ui-view></div>
+<body ng-controller="loginController">
+    <navbar></navbar>
+    <div ui-view style="padding-top: 50px"></div>
 </body>
 
 <!-- Angular -->
@@ -26,11 +27,18 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-<!-- Js files -->
+<!-- Misc -->
 <script src="js/app/app.js"></script>
 <script src="js/app/router.js"></script>
 <script src="js/app/config.js"></script>
-<script src="js/app/services/login_service.js"></script>
-<script src="js/app/controllers/login_controller.js"></script>
 
+<!-- Services -->
+<script src="js/app/services/login_service.js"></script>
+
+<!-- Controllers -->
+<script src="js/app/controllers/login/login_controller.js"></script>
+<script src="js/app/controllers/nav/nav_controller.js"></script>
+
+<!-- Directives -->
+<script src="js/app/directives/nav/navbar.js"></script>
 </html>
