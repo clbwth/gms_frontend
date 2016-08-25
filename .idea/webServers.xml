@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a5d4e806-2c56-4338-8af9-496e9e5aa18e" name="dt3HP" url="http://192.168.178.118">
+        <fileTransfer host="192.168.178.118" port="22" rootFolder="/var/www/html" accessType="SFTP" password="dfdddfc3dfc4dfcedfc5dfdddfd9" username="dt3_dev">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="150000" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
