@@ -6,7 +6,7 @@ angular.module('gms')
         $scope.username;
         $scope.password;
         $scope.access_denied = false;
-
+        
         $scope.login = function ()
         {
             LogsUserIn.login({
@@ -19,6 +19,7 @@ angular.module('gms')
                     $scope.onSuccessLogin();
                 })
                 .error(function (data) {
+                    console.log(data);
                     $scope.access_denied = true;
                 })
         };
@@ -35,6 +36,10 @@ angular.module('gms')
 
         angular.element(document).ready(function () {
             $scope.checkToken();
+
+            $('#login').on('submit', function(e){
+                e.preventDefault();
+            });
         });
     })
     
